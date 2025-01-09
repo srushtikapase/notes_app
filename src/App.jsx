@@ -7,7 +7,8 @@ function App() {
 
   const handleAddNote = () => {
     if (newNote.trim()) {
-      setNotes([...notes, newNote]);
+      const currentTime = new Date().toLocaleString(); // Get the current date and time
+      setNotes([...notes, { note: newNote, time: currentTime }]);
       setNewNote('');
     }
   };
@@ -34,9 +35,10 @@ function App() {
 
       <div className="notes-list">
         {notes.length > 0 ? (
-          notes.map((note, index) => (
+          notes.map((noteObj, index) => (
             <div className="note" key={index}>
-              <span>{note}</span>
+              <span>{noteObj.note}</span>
+              <span className="note-time">{noteObj.time}</span>
               <button className="delete-btn" onClick={() => handleDeleteNote(index)}>
                 🗑️
               </button>

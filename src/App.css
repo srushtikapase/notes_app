@@ -146,6 +146,11 @@ button.add-btn:hover {
   font-size: 18px;
   transition: transform 0.2s ease-in-out;
 }
+.note-time {
+  font-size: 0.8rem;
+  color: gray;
+  margin-left: 10px;
+}
 
 .note:hover {
   transform: scale(1.05);
